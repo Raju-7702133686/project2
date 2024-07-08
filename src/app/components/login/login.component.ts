@@ -22,6 +22,7 @@ constructor( private loginservice: LoginserviceService, private router: Router){
     this.loginservice.dologin(this.userForm.value).subscribe(
       (data :any) =>{
         this.router.navigateByUrl("/dashboard");
+        localStorage.setItem('token', data.token);
       },
       (err : any)=> {
         alert("login failed")
