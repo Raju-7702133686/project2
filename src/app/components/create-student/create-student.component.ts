@@ -9,17 +9,21 @@ import { AbstractFormGroupDirective, FormControl, FormGroup } from '@angular/for
 export class CreateStudentComponent {
 
   public studentForm: FormGroup = new FormGroup({
-    name : new FormControl(),
-    male : new FormControl(),
+    name: new FormControl(),
+    male: new FormControl(),
     female: new FormControl(),
-    mobile : new FormControl(),
-    email : new FormControl(),
-    batch : new FormControl()
+    mobile: new FormControl(),
+    email: new FormControl(),
+    batch: new FormControl(),
+    address: new FormGroup({
+      city: new FormControl(),
+      mandal: new FormControl(),
+      district: new FormControl(),
+      state: new FormControl(),
+      pincode: new FormControl()
+    })
   })
-  onsubmit(){
+  onsubmit() {
     console.log(this.studentForm);
-    window.location.reload();
-    alert("form submitted successfully");
-
   }
 };
