@@ -15,6 +15,7 @@ export class LoginComponent {
     password: new FormControl('',[Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
     ])
   })
+  // injecting login servie and router service
 constructor( private loginservice: LoginserviceService, private router: Router){}
   login(){
     console.log(this.userForm);
@@ -29,5 +30,4 @@ constructor( private loginservice: LoginserviceService, private router: Router){
       }
     )
   }
-
 }

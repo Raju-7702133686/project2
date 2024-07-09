@@ -7,7 +7,12 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { CreateStudentComponent } from './components/create-student/create-student.component';
+import { RouterModule } from '@angular/router';
+import { AllStudentsComponent } from './components/all-students/all-students.component';
 
 
 @NgModule({
@@ -15,14 +20,19 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    HomeComponent,
+    AboutComponent,
+    CreateStudentComponent,
+    AllStudentsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
     
   ],
   providers: [],
