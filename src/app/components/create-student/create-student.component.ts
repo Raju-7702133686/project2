@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AbstractFormGroupDirective, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-create-student',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class CreateStudentComponent {
 
-}
+  public studentForm: FormGroup = new FormGroup({
+    name : new FormControl(),
+    male : new FormControl(),
+    female: new FormControl(),
+    mobile : new FormControl(),
+    email : new FormControl(),
+    batch : new FormControl()
+  })
+  onsubmit(){
+    console.log(this.studentForm);
+    window.location.reload();
+    alert("form submitted successfully");
+
+  }
+};
