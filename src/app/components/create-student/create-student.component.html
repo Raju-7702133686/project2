@@ -9,11 +9,11 @@
             <label>Gender</label>
             <div class="d-flex align-items-center mt-2">
                 <label class="option">
-                    <input type="radio" name="radio" required formControlName="male">Male
+                    <input type="radio" name="radio" required formControlName="male" value="male">Male
                     <span class="checkmark"></span>
                 </label>
                 <label class="option ms-4">
-                    <input type="radio" name="radio" formControlName="female">Female
+                    <input type="radio" name="radio" formControlName="female" value="female">Female
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="">Email</label>
-            <input type="email" class="form-control"  formControlName="email">
+            <input type="email" class="form-control" formControlName="email">
         </div>
         <div class="form-group col-md-6">
             <label for="">Batch</label>
@@ -64,11 +64,11 @@
             </div>
         </div>
         <!-- push method to add card details -->
-        <div class="d-flex justify-content-start align-items-center mt-4" >
+        <div class="d-flex justify-content-start align-items-center mt-4">
             <button class="btn btn-success" (click)="addCard()">Add Education Details</button>
         </div>
         <!-- Form array -->
-         <div formArrayName="education">
+        <div formArrayName="education">
             <div *ngFor="let education of educationFormArray.controls; let i=index">
                 <div formGroupName="{{i}}">
                     <h5 class="mt-4">Education Details</h5>
@@ -97,8 +97,9 @@
 
                 </div>
             </div>
-         </div>
-         <div formGroupName="company">
+        </div>
+        <!-- Nested form -->
+        <div formGroupName="company">
             <h5 class="text-primary mt-3">Company Details</h5>
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
@@ -124,7 +125,34 @@
                     <input type="date" class="form-control" required formControlName="offerDate">
                 </div>
             </div>
-         </div>
+        </div>
+
+        <!-- Source type -->
+        <div class="row">
+            <div class="col-md-6 mt-md-0 mt4">
+                <h5 class="text-primary mt-3">Source Type</h5>
+                <div class="">
+                    <div class=" mt-4">
+                        <div class="form-check d-flex">
+                            <div class="direct-radio-button">  
+                                <input type="radio" class="form-check-input" value="direct" name="sourceType" formControlName="direct">
+                                <label for="direct" class="form-check-label">Direct</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="form-check-input" value="referral" name="sourceType" formControlName="referral">
+                                <label for="referral" class="form-check-label">Referral</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-check">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
         <div class="form-group col-md-6 mt-4">
             <button type="submit" class="btn btn-primary" (click)="onsubmit()">Submit</button>
         </div>

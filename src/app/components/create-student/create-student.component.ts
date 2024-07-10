@@ -28,7 +28,10 @@ export class CreateStudentComponent {
       location: new FormControl(),
       package: new FormControl(),
       offerDate: new FormControl()
-    })
+    }),
+    sourceType: new FormControl(),
+    direct: new FormControl(),
+    referral: new FormControl()
   });
   get educationFormArray(){
     return this.studentForm.get('education') as FormArray;
