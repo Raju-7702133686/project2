@@ -36,6 +36,9 @@ export class CreateStudentComponent {
       })
     )
   }
+  deleteCard(i: number){
+    this.educationFormArray.removeAt(i);
+  }
   onsubmit() {
     console.log(this.studentForm);
   }
