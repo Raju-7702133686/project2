@@ -33,7 +33,7 @@
         <div formGroupName="address">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="mt-4">Address:</h5>
+                    <h5 class="text-primary mt-3">Address:</h5>
                     <label>City</label>
                     <input type="text" class="form-control" required formControlName="city">
                 </div>
@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
                     <label>Pincode</label>
-                    <input type="text" class="form-control" required formControlName="pincode">
+                    <input type="number" class="form-control" required formControlName="pincode">
                 </div>
             </div>
         </div>
@@ -95,6 +95,33 @@
                         <button class="btn btn-danger mt-4" (click)="deleteCard(i)">Delete</button>
                     </div>
 
+                </div>
+            </div>
+         </div>
+         <div formGroupName="company">
+            <h5 class="text-primary mt-3">Company Details</h5>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Name</label>
+                    <input type="text" class="form-control" required formControlName="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label for="company name">location</label>
+                    <input type="text" class="form-control" required formControlName="location">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label for="package">Package</label>
+                    <input type="text" class="form-control" required formControlName="package">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label for="offer date">Offer Date</label>
+                    <input type="date" class="form-control" required formControlName="offerDate">
                 </div>
             </div>
          </div>

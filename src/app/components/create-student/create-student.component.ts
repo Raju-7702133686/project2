@@ -22,7 +22,13 @@ export class CreateStudentComponent {
       state: new FormControl(),
       pincode: new FormControl()
     }),
-    education: new FormArray([])
+    education: new FormArray([]),
+    company: new FormGroup({
+      name: new FormControl(),
+      location: new FormControl(),
+      package: new FormControl(),
+      offerDate: new FormControl()
+    })
   });
   get educationFormArray(){
     return this.studentForm.get('education') as FormArray;
