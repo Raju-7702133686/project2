@@ -53,6 +53,7 @@ minlenght: any;
     this.educationFormArray.removeAt(i);
   }
   constructor(private studentservice: StudentService){}
+
   onsubmit() {
     this.studentservice.createStudent(this.studentForm.value).subscribe(
       (data: any)=>{
