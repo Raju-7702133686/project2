@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractFormGroupDirective, FormControl, FormGroup } from '@angular/forms';
+import { AbstractFormGroupDirective, FormArray, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-create-student',
@@ -21,8 +21,21 @@ export class CreateStudentComponent {
       district: new FormControl(),
       state: new FormControl(),
       pincode: new FormControl()
-    })
-  })
+    }),
+    education: new FormArray([])
+  });
+  get educationFormArray(){
+    return this.studentForm.get('education') as FormArray;
+  }
+  addCard(){
+    this.educationFormArray.push(
+      new FormGroup({
+        qualification: new FormControl(),
+        year: new FormControl(),
+        percentage: new FormControl()
+      })
+    )
+  }
   onsubmit() {
     console.log(this.studentForm);
   }

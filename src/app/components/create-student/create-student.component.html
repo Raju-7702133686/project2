@@ -63,6 +63,37 @@
                 </div>
             </div>
         </div>
+        <!-- push method to add card details -->
+        <div class="d-flex justify-content-start align-items-center mt-4" >
+            <button class="btn btn-success" (click)="addCard()">Add Education Details</button>
+        </div>
+        <!-- Form array -->
+         <div formArrayName="education">
+            <div *ngFor="let education of educationFormArray.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <h5 class="mt-4">Education Details</h5>
+                    <div class="row">
+                        <div class="col-md-6 mt-md-0 mt-3">
+                            <label>Qualification</label>
+                            <input type="text" class="form-control" required formControlName="qualification">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-md-0 mt-3">
+                            <label>Year</label>
+                            <input type="number" class="form-control" required formControlName="year">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-md-0 mt-3">
+                            <label>Percentage</label>
+                            <input type="number" class="form-control" required formControlName="percentage">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </div>
         <div class="form-group col-md-6 mt-4">
             <button type="submit" class="btn btn-primary" (click)="onsubmit()">Submit</button>
         </div>
