@@ -10,3 +10,7 @@ h5{
 .direct-radio-button{
     margin-right: 10%;
 }
+span{
+    display: block;
+    text-align: left !important;
+}

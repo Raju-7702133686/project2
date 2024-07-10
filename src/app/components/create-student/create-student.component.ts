@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractFormGroupDirective, FormArray, FormControl, FormGroup } from '@angular/forms';
+import { AbstractFormGroupDirective, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-student',
@@ -7,41 +7,43 @@ import { AbstractFormGroupDirective, FormArray, FormControl, FormGroup } from '@
   styleUrls: ['./create-student.component.css']
 })
 export class CreateStudentComponent {
-
+// Mapping with form
   public studentForm: FormGroup = new FormGroup({
-    name: new FormControl(),
+    name: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
     male: new FormControl(),
     female: new FormControl(),
-    mobile: new FormControl(),
-    email: new FormControl(),
+    mobile: new FormControl('',[Validators.required, Validators.min(100), Validators.max(9999999999)]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     batch: new FormControl(),
     address: new FormGroup({
-      city: new FormControl(),
-      mandal: new FormControl(),
-      district: new FormControl(),
-      state: new FormControl(),
-      pincode: new FormControl()
+      city: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      mandal: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      district: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      state: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      pincode: new FormControl('',[Validators.required, Validators.min(100), Validators.max(666666)])
     }),
     education: new FormArray([]),
     company: new FormGroup({
-      name: new FormControl(),
-      location: new FormControl(),
-      package: new FormControl(),
+      name: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      location: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      package: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
       offerDate: new FormControl()
     }),
     sourceType: new FormControl(),
-    direct: new FormControl(),
-    referral: new FormControl()
+    direct: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+    referral: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)])
   });
+required: any;
+minlenght: any;
   get educationFormArray(){
     return this.studentForm.get('education') as FormArray;
   }
   addCard(){
     this.educationFormArray.push(
       new FormGroup({
-        qualification: new FormControl(),
-        year: new FormControl(),
-        percentage: new FormControl()
+        qualification: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+        year: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+        percentage: new FormControl('',[Validators.required, Validators.min(100), Validators.max(4444)])
       })
     )
   }
