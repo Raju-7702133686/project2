@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractFormGroupDirective, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { student } from 'src/app/models/student';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-create-student',
@@ -50,7 +52,17 @@ minlenght: any;
   deleteCard(i: number){
     this.educationFormArray.removeAt(i);
   }
+  constructor(private studentservice: StudentService){}
   onsubmit() {
+    this.studentservice.createStudent(this.studentForm.value).subscribe(
+      (data: any)=>{
+        alert("Student data created successfully");
+      }
+    ),
+    (err: any)=>{
+      alert("Student data creation failed")
+    }
     console.log(this.studentForm);
+
   }
 };

@@ -136,10 +136,17 @@
                         <div class="col-md-6 mt-md-0 mt-3">
                             <label>Qualification</label>
                             <input type="text" class="form-control" required formControlName="qualification">
-                            <span class="text-danger" *ngIf="educationFormArray.controls[i].get('qualification')?. invalid && educationFormArray.controls[i].get('qualification')?. touched">
-                                <span *ngIf="educationFormArray.controls[i].get('qualification')?. errors?.['required']">This field is required </span>
-                                <span *ngIf="educationFormArray.controls[i].get('qualification')?. errors?.['minlength']">Please enter at least 3 characaters</span>
-                                <span *ngIf="educationFormArray.controls[i].get('qualification')?. errors?. ['maxlength']">Maximum 10 characters only</span>
+                            <span class="text-danger"
+                                *ngIf="educationFormArray.controls[i].get('qualification')?. invalid && educationFormArray.controls[i].get('qualification')?. touched">
+                                <span
+                                    *ngIf="educationFormArray.controls[i].get('qualification')?. errors?.['required']">This
+                                    field is required </span>
+                                <span
+                                    *ngIf="educationFormArray.controls[i].get('qualification')?. errors?.['minlength']">Please
+                                    enter at least 3 characaters</span>
+                                <span
+                                    *ngIf="educationFormArray.controls[i].get('qualification')?. errors?. ['maxlength']">Maximum
+                                    10 characters only</span>
                             </span>
                         </div>
                     </div>
@@ -147,10 +154,14 @@
                         <div class="col-md-6 mt-md-0 mt-3">
                             <label>Year</label>
                             <input type="number" class="form-control" required formControlName="year">
-                            <span class="text-danger" *ngIf="educationFormArray.controls[i].get('year')?. invalid && educationFormArray.controls[i].get('year')?. touched">
-                                <span *ngIf="educationFormArray.controls[i].get('year')?. errors?.['required']">This field is required </span>
-                                <span *ngIf="educationFormArray.controls[i].get('year')?. errors?.['min']">please enter valid year</span>
-                                <span *ngIf="educationFormArray.controls[i].get('year')?. errors?. ['max']">Please enter your properly</span>
+                            <span class="text-danger"
+                                *ngIf="educationFormArray.controls[i].get('year')?. invalid && educationFormArray.controls[i].get('year')?. touched">
+                                <span *ngIf="educationFormArray.controls[i].get('year')?. errors?.['required']">This
+                                    field is required </span>
+                                <span *ngIf="educationFormArray.controls[i].get('year')?. errors?.['min']">please enter
+                                    valid year</span>
+                                <span *ngIf="educationFormArray.controls[i].get('year')?. errors?. ['max']">Please enter
+                                    your properly</span>
                             </span>
                         </div>
                     </div>
@@ -158,10 +169,16 @@
                         <div class="col-md-6 mt-md-0 mt-3">
                             <label>Percentage</label>
                             <input type="number" class="form-control" required formControlName="percentage">
-                            <span class="text-danger" *ngIf="educationFormArray.controls[i].get('percentage')?. invalid && educationFormArray.controls[i].get('percentage')?. touched">
-                                <span *ngIf="educationFormArray.controls[i].get('percentage')?. errors?.['required']">This field is required </span>
-                                <span *ngIf="educationFormArray.controls[i].get('percentage')?. errors?.['min']">Please enter percentage with numbers</span>
-                                <span *ngIf="educationFormArray.controls[i].get('percentage')?. errors?. ['max']">percentage should be 2 numbers only</span>
+                            <span class="text-danger"
+                                *ngIf="educationFormArray.controls[i].get('percentage')?. invalid && educationFormArray.controls[i].get('percentage')?. touched">
+                                <span
+                                    *ngIf="educationFormArray.controls[i].get('percentage')?. errors?.['required']">This
+                                    field is required </span>
+                                <span *ngIf="educationFormArray.controls[i].get('percentage')?. errors?.['min']">Please
+                                    enter percentage with numbers</span>
+                                <span
+                                    *ngIf="educationFormArray.controls[i].get('percentage')?. errors?. ['max']">percentage
+                                    should be 2 numbers only</span>
                             </span>
                         </div>
                     </div>
@@ -181,14 +198,14 @@
                     <label>Name</label>
                     <input type="text" class="form-control" required formControlName="name">
                     <span class="text-danger"
-                    *ngIf="studentForm.get('company')?. get('name')?. invalid && studentForm.get('company')?.get('name')?. touched">
-                    <span *ngIf="studentForm.get('company')?.get('name')?.  errors?. ['required']">This field
-                        required</span>
-                    <span *ngIf="studentForm.get('company')?. get('name')?. errors?. ['minlength']">Please enter
-                        minimum 2 characters</span>
-                    <span *ngIf="studentForm.get('company')?. get('name')?.errors?. ['maxlength']">Maximum 10
-                        characters only</span>
-                </span>
+                        *ngIf="studentForm.get('company')?. get('name')?. invalid && studentForm.get('company')?.get('name')?. touched">
+                        <span *ngIf="studentForm.get('company')?.get('name')?.  errors?. ['required']">This field
+                            required</span>
+                        <span *ngIf="studentForm.get('company')?. get('name')?. errors?. ['minlength']">Please enter
+                            minimum 2 characters</span>
+                        <span *ngIf="studentForm.get('company')?. get('name')?.errors?. ['maxlength']">Maximum 10
+                            characters only</span>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -196,14 +213,14 @@
                     <label for="company name">location</label>
                     <input type="text" class="form-control" required formControlName="location">
                     <span class="text-danger"
-                    *ngIf="studentForm.get('company')?. get('location')?. invalid && studentForm.get('company')?.get('location')?. touched">
-                    <span *ngIf="studentForm.get('company')?.get('location')?.  errors?. ['required']">This field
-                        required</span>
-                    <span *ngIf="studentForm.get('company')?. get('location')?. errors?. ['minlength']">Please enter
-                        minimum 2 characters</span>
-                    <span *ngIf="studentForm.get('company')?. get('location')?.errors?. ['maxlength']">Maximum 10
-                        characters only</span>
-                </span>
+                        *ngIf="studentForm.get('company')?. get('location')?. invalid && studentForm.get('company')?.get('location')?. touched">
+                        <span *ngIf="studentForm.get('company')?.get('location')?.  errors?. ['required']">This field
+                            required</span>
+                        <span *ngIf="studentForm.get('company')?. get('location')?. errors?. ['minlength']">Please enter
+                            minimum 2 characters</span>
+                        <span *ngIf="studentForm.get('company')?. get('location')?.errors?. ['maxlength']">Maximum 10
+                            characters only</span>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -211,14 +228,14 @@
                     <label for="package">Package</label>
                     <input type="text" class="form-control" required formControlName="package">
                     <span class="text-danger"
-                    *ngIf="studentForm.get('company')?. get('package')?. invalid && studentForm.get('company')?.get('package')?. touched">
-                    <span *ngIf="studentForm.get('company')?.get('package')?.  errors?. ['required']">This field
-                        required</span>
-                    <span *ngIf="studentForm.get('company')?. get('package')?. errors?. ['minlength']">Please enter
-                        minimum 2 characters</span>
-                    <span *ngIf="studentForm.get('company')?. get('package')?.errors?. ['maxlength']">Maximum 10
-                        characters only</span>
-                </span>
+                        *ngIf="studentForm.get('company')?. get('package')?. invalid && studentForm.get('company')?.get('package')?. touched">
+                        <span *ngIf="studentForm.get('company')?.get('package')?.  errors?. ['required']">This field
+                            required</span>
+                        <span *ngIf="studentForm.get('company')?. get('package')?. errors?. ['minlength']">Please enter
+                            minimum 2 characters</span>
+                        <span *ngIf="studentForm.get('company')?. get('package')?.errors?. ['maxlength']">Maximum 10
+                            characters only</span>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -254,10 +271,14 @@
                         <div class="col-md-6 mt-md-0">
                             <label for="source from">Source from</label>
                             <input type="text" class="form-control" required formControlName="direct">
-                            <span class="text-danger" *ngIf="studentForm.get('direct')?. invalid && studentForm.get('direct')?. touched">
-                                <span *ngIf="studentForm.get('direct')?. errors?.['required']">This field is required </span>
-                                <span *ngIf="studentForm.get('direct')?. errors?.['minlength']">Please enter at least 3 characaters</span>
-                                <span *ngIf="studentForm.get('direct')?. errors?. ['maxlength']">Maximum 10 characters only</span>
+                            <span class="text-danger"
+                                *ngIf="studentForm.get('direct')?. invalid && studentForm.get('direct')?. touched">
+                                <span *ngIf="studentForm.get('direct')?. errors?.['required']">This field is required
+                                </span>
+                                <span *ngIf="studentForm.get('direct')?. errors?.['minlength']">Please enter at least 3
+                                    characaters</span>
+                                <span *ngIf="studentForm.get('direct')?. errors?. ['maxlength']">Maximum 10 characters
+                                    only</span>
                             </span>
                         </div>
                     </div>
@@ -267,10 +288,14 @@
                         <div class="col-md-6 mt-md-0">
                             <label for="source from">Referral Name</label>
                             <input type="text" class="form-control" required formControlName="referral">
-                            <span class="text-danger" *ngIf="studentForm.get('referral')?. invalid && studentForm.get('referral')?. touched">
-                                <span *ngIf="studentForm.get('referral')?. errors?.['required']">This field is required </span>
-                                <span *ngIf="studentForm.get('referral')?. errors?.['minlength']">Please enter at least 3 characaters</span>
-                                <span *ngIf="studentForm.get('referral')?. errors?. ['maxlength']">Maximum 10 characters only</span>
+                            <span class="text-danger"
+                                *ngIf="studentForm.get('referral')?. invalid && studentForm.get('referral')?. touched">
+                                <span *ngIf="studentForm.get('referral')?. errors?.['required']">This field is required
+                                </span>
+                                <span *ngIf="studentForm.get('referral')?. errors?.['minlength']">Please enter at least
+                                    3 characaters</span>
+                                <span *ngIf="studentForm.get('referral')?. errors?. ['maxlength']">Maximum 10 characters
+                                    only</span>
                             </span>
                         </div>
                     </div>
