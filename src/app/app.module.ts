@@ -13,6 +13,9 @@ import { AboutComponent } from './components/about/about.component';
 import { CreateStudentComponent } from './components/create-student/create-student.component';
 import { RouterModule } from '@angular/router';
 import { AllStudentsComponent } from './components/all-students/all-students.component';
+import { DetailsPageComponent } from './components/details-page/details-page.component';
+import { LpaPipe } from './pipes/lpa.pipe';
+
 
 
 @NgModule({
@@ -25,6 +28,9 @@ import { AllStudentsComponent } from './components/all-students/all-students.com
     AboutComponent,
     CreateStudentComponent,
     AllStudentsComponent,
+    DetailsPageComponent,
+    LpaPipe
+,
   ],
   imports: [
     BrowserModule,

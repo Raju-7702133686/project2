@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { CreateStudentComponent } from './components/create-student/create-student.component';
 import { AllStudentsComponent } from './components/all-students/all-students.component';
+import { DetailsPageComponent } from './components/details-page/details-page.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path:'home', component: HomeComponent},
     {path:'about',component: AboutComponent},
     {path:'create-student', component: CreateStudentComponent},
-    {path:'all-students', component: AllStudentsComponent}
+    {path:'all-students', component: AllStudentsComponent},
+    {path:'details-page/:id',component: DetailsPageComponent}
   ]},
   {path:'' , component: LoginComponent},
   {path:'**',component: PagenotfoundComponent}

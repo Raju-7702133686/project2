@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { student } from 'src/app/models/student';
 import { StudentService } from 'src/app/services/student.service';
 
@@ -14,7 +15,7 @@ export class AllStudentsComponent {
   public column: any='';
   public order: any='';
   public term: any='';
-  constructor(private studentService: StudentService){
+  constructor(private studentService: StudentService, private router: Router){
     this.studentService.getStudents().subscribe(
       (data: any)=>{
         this.students=data;
@@ -57,6 +58,10 @@ export class AllStudentsComponent {
         alert("internal error");
       }
     )
+  }
+  view(id:number){
+    this.router.navigateByUrl('/dashboard/details-page/'+id);
+    
   }
  
 }

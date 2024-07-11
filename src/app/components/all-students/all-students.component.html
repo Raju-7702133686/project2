@@ -20,11 +20,8 @@
       <button type="submit" class="btn btn-primary" (click)="getSortedStudents()">Sort</button>
     </div>
 
-    <div class="col-md-4 d-flex gap-2">
+    <div class="col-md-4">
       <input type="text" class="form-control" placeholder="Serach" [(ngModel)]="term" (keyup)="getFilterdStudents()">
-      <button class="btn btn-primary">
-        <i class="fas fa-search"></i>
-      </button>
     </div>
   </div>
 
@@ -50,6 +47,8 @@
       <th scope="col">Source Type</th>
       <th scope="col">Direct</th>
       <th scope="col">Referral Name</th>
+      <th scope="col">Actions</th>
+
 
     </thead>
     <tbody>
@@ -69,11 +68,14 @@
         <td>{{student.education}}</td>
         <td>{{student.company?.name}}</td>
         <td>{{student.company?.location}}</td>
-        <td>{{student.company?.package}}</td>
+        <td>{{student.company?.package | lpa}}</td>
         <td>{{student.company?.offerDate | date: "dd-mm-yy"}}</td>
         <td>{{student.sourceType}}</td>
         <td>{{student.direct}}</td>
         <td>{{student.referral}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="view(student.id)">view</button>
+        </td>
       </tr>
     </tbody>
   </table>

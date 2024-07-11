@@ -1,0 +1,54 @@
+<div class="container student-details">
+    <h1 class="text-center">Student Details </h1>
+    <img src="{{student.avatar}}" alt="" width="150" height="150" class="img-fluid">
+    <div class=" row ">
+
+        <div class="col-md-6">
+            <h4 class="mt-4 text-primary" >Personal Details</h4>
+            <p class="">Name: <span>{{student.name}} </span></p>
+            <p class="">Gender: <span>{{student.gender}} </span></p>
+            <p class="">Mobile: <span>{{student.mobile}}</span></p>
+            <p class="">Email: <span>{{student.email}} </span></p>
+            <p class="">Batch: <span>{{student.batch}} </span></p>
+
+            <h4 class="mt-4 text-primary">Address</h4>
+            <p class="">City: <span>{{student.address?.city}} </span></p>
+            <p class="">Mandal: <span>{{student.address?.mandal}} </span></p>
+            <p class="">District: <span>{{student.address?.district}}</span></p>
+            <p class="">State: <span>{{student.address?.state}} </span></p>
+            <p class="">Pincode: <span>{{student.address?.pincode}} </span></p>
+           
+        </div>
+        <div class="col-md-6">
+            <h4 class="mt-4 text-primary">Education Details</h4>
+            <table class="table table-bordered table-hover ">
+                <thead>
+                    <th>Qualification</th>
+                    <th>Year</th>
+                    <th>Percentage</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{student.qualification}} </td>
+                        <td>{{student.year}} </td>
+                        <td>{{student.education}} </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="mt-4 text-primary">Company Details
+            </h4>
+            <p class="">Company Name: <span>{{student.company?.name}} </span></p>
+            <p class="">Location: <span>{{student.comapany?.location}} </span></p>
+            <p class="">Package: <span>{{student.company?.package | lpa}}</span></p>
+            <p class="">Offer Date: <span>{{student.company?.offerDate}} </span></p>
+
+            <h4 class="mt-4 text-primary">Source Type</h4>
+            <p class="">Source from: <span>{{student.direct}} </span></p>
+            <p class="">Referral: <span>{{student.referral}} </span></p>
+        </div>
+    
+
+
+
+    </div>
+</div>
