@@ -1,52 +1,93 @@
 <div class="container">
-    <table class="table table-hover">
-        <thead>
-            <th scope="col">Name</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Mobile</th>
-            <th scope="col">Batch</th>
-            <th scope="col">Email</th>
-            <th scope="col">City</th>
-            <th scope="col">Mandal</th>
-            <th scope="col">District</th>
-            <th scope="col">State</th>
-            <th scope="col">Pincode</th>
-            <th scope="col">Qualification</th>
-            <th scope="col">Year</th>
-            <th scope="col">Percentage</th>
-            <th scope="col">Company Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Package</th>
-            <th scope="col">Offer Date</th>
-            <th scope="col">Source Type</th>
-            <th scope="col">Direct</th>
-            <th scope="col">Referral Name</th>
-            
-        </thead>
-        <tbody>
-            <tr *ngFor="let student of students">
-                <td>{{student.name}}</td>
-                <td>{{student.gender}}</td>
-                <td>{{student.mobile}}</td>
-                <td>{{student.batch | date: "dd-mm-yy"}}</td>
-                <td>{{student.email}}</td>
-                <td>{{student.address?.city}}</td>
-                <td>{{student.address?.mandal}}</td>
-                <td>{{student.address?.district}}</td>
-                <td>{{student.address?.state}}</td>
-                <td>{{student.address?.pincode}}</td>
-                <td>{{student.education}}</td>
-                <td>{{student.education}}</td>
-                <td>{{student.education}}</td>
-                <td>{{student.company?.name}}</td>
-                <td>{{student.company?.location}}</td>
-                <td>{{student.company?.package}}</td>
-                <td>{{student.company?.offerDate | date: "dd-mm-yy"}}</td>
-                <td>{{student.sourceType}}</td>
-                <td>{{student.direct}}</td>
-                <td>{{student.referral}}</td>
-            </tr>
-        </tbody>
+  <div class="row">
+    <div class="col-md-3">
+      <label for="column">Column</label>
+      <select class="form-select" name="" id="" [(ngModel)]="column">
+        <option value="gernder">Gender</option>
+        <option value="city">City</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="column">Order</label>
+      <select class="form-select" name="" id="" [(ngModel)]="order">
+        <option value="ascr">asc</option>
+        <option value="desc">desc</option>
 
-    </table>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-primary" (click)="getSortedStudents()">Sort</button>
+    </div>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <th scope="col">Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Batch</th>
+      <th scope="col">Email</th>
+      <th scope="col">City</th>
+      <th scope="col">Mandal</th>
+      <th scope="col">District</th>
+      <th scope="col">State</th>
+      <th scope="col">Pincode</th>
+      <th scope="col">Qualification</th>
+      <th scope="col">Year</th>
+      <th scope="col">Percentage</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Package</th>
+      <th scope="col">Offer Date</th>
+      <th scope="col">Source Type</th>
+      <th scope="col">Direct</th>
+      <th scope="col">Referral Name</th>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{student.name}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.mobile}}</td>
+        <td>{{student.batch | date: "dd-mm-yy"}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.address?.city}}</td>
+        <td>{{student.address?.mandal}}</td>
+        <td>{{student.address?.district}}</td>
+        <td>{{student.address?.state}}</td>
+        <td>{{student.address?.pincode}}</td>
+        <td>{{student.education}}</td>
+        <td>{{student.education}}</td>
+        <td>{{student.education}}</td>
+        <td>{{student.company?.name}}</td>
+        <td>{{student.company?.location}}</td>
+        <td>{{student.company?.package}}</td>
+        <td>{{student.company?.offerDate | date: "dd-mm-yy"}}</td>
+        <td>{{student.sourceType}}</td>
+        <td>{{student.direct}}</td>
+        <td>{{student.referral}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-center align-items-center">
+    <nav aria-label="Page navigation example text-center">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous" [(ngModel)]="limit">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next" [(ngModel)]="page">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
