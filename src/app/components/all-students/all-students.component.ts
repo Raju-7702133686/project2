@@ -9,6 +9,10 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class AllStudentsComponent {
   public students: any;
+  public limit:any='';
+  public page:any='';
+  public column: any='';
+  public order: any='';
   constructor(private studentService: StudentService){
     this.studentService.getStudents().subscribe(
       (data: any)=>{
@@ -19,5 +23,29 @@ export class AllStudentsComponent {
       }
     )
   }
+
+
+  getPaginatedStudents(){
+    this.studentService.getPaginatedStudents(this.limit,this.page).subscribe(
+      (data: any)=>{
+        this.students= data;
+      },
+      (err: any)=>{
+        alert("Internal error");
+      }
+    )
+  }
+
+  getSortedStudents(){
+    this.studentService.getSortedStudents(this.column, this.order).subscribe(
+      (data: any)=>{
+        this.students=data;
+      },
+      (err: any)=>{
+        alert("internal error");
+      }
+    )
+  }
  
 }
+

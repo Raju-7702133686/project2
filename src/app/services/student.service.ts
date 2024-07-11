@@ -13,7 +13,13 @@ export class StudentService {
     return this.httpClient.post("https://62b9299dff109cd1dc8ca34f.mockapi.io/students",data);
   }
   getStudents():Observable<any>{
-    return this.httpClient.get("https://62b9299dff109cd1dc8ca34f.mockapi.io/students")
+    return this.httpClient.get("https://62b9299dff109cd1dc8ca34f.mockapi.io/students");
 
+  }
+  getPaginatedStudents(limit: any, page: any){
+    return this.httpClient.get("https://62b9299dff109cd1dc8ca34f.mockapi.io/students?limit"+limit+"&page"+page);
+  }
+  getSortedStudents(column: any, order:any):Observable<any>{
+    return this.httpClient.get("https://62b9299dff109cd1dc8ca34f.mockapi.io/students?sortBy="+column+"&order="+order);
   }
 }
