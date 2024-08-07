@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-5">
+      <label for="todo" class="form-label">Add Task</label>
+      <input type="text" class="form-control" [(ngModel)]="taskInput" />
+      <div class="d-flex justify-content-between mt-2">
+        <button class="btn btn-primary mt-3" [disabled]="taskInput == ''" (click)="reset()">Reset</button>
+        <button class="btn btn-danger mt-3" (click)="add()" [disabled]="taskInput == ''">Add</button>
+      </div>
+    </div>
+  </div>
+  <app-todolist></app-todolist>
+</div>

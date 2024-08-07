@@ -63,7 +63,7 @@
         <td>{{student.address?.district}}</td>
         <td>{{student.address?.state}}</td>
         <td>{{student.address?.pincode}}</td>
-        <td>{{student.education}}</td>
+        <td>{{student['qualification'].education}}</td>
         <td>{{student.education}}</td>
         <td>{{student.education}}</td>
         <td>{{student.company?.name}}</td>
@@ -75,6 +75,8 @@
         <td>{{student.referral}}</td>
         <td>
           <button class="btn btn-primary" (click)="view(student.id)">view</button>
+          <button class="btn btn-success mt-4" (click)="edit(student.id)">Edit</button>
+          <button class="btn btn-danger mt-4" (click)="delete(student.id)">Delete</button>
         </td>
       </tr>
     </tbody>

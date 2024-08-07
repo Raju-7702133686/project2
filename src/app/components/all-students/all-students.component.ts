@@ -9,7 +9,7 @@ import { StudentService } from 'src/app/services/student.service';
   styleUrls: ['./all-students.component.css']
 })
 export class AllStudentsComponent {
-  public students: any;
+  public students: any[]=[];
   public limit:any='';
   public page:any='';
   public column: any='';
@@ -61,8 +61,17 @@ export class AllStudentsComponent {
   }
   view(id:number){
     this.router.navigateByUrl('/dashboard/details-page/'+id);
-    
   }
- 
+  edit(id: number){
+    this.router.navigateByUrl('/dashboard/create-edit/'+id);
+  }
+ delete(id:number){
+  this.studentService.deleteStudent(id).subscribe(
+    (data:any)=>{
+      alert("Student Data deleted successfully");
+      location.reload();
+    }
+  )
+ }
 }
 

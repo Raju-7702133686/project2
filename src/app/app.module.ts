@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { AllStudentsComponent } from './components/all-students/all-students.component';
 import { DetailsPageComponent } from './components/details-page/details-page.component';
 import { LpaPipe } from './pipes/lpa.pipe';
+import { TodoFormComponent } from './components/todo-form/todo-form.component';
+import { TodolistComponent } from './components/todolist/todolist.component';
 
 
 
@@ -29,7 +31,9 @@ import { LpaPipe } from './pipes/lpa.pipe';
     CreateStudentComponent,
     AllStudentsComponent,
     DetailsPageComponent,
-    LpaPipe
+    LpaPipe,
+    TodoFormComponent,
+    TodolistComponent
 ,
   ],
   imports: [

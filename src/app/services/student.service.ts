@@ -28,4 +28,10 @@ export class StudentService {
   getStudent(id:any):Observable<any>{
     return this.httpClient.get("https://62b9299dff109cd1dc8ca34f.mockapi.io/students/"+id);
   }
+  updateStudent(id:any, data:any):Observable<any>{
+    return this.httpClient.put("https://62b9299dff109cd1dc8ca34f.mockapi.io/students/"+id,data);
+  }
+  deleteStudent(id:any):Observable<any>{
+    return this.httpClient.delete("https://62b9299dff109cd1dc8ca34f.mockapi.io/students/"+id);
+  }
 }
